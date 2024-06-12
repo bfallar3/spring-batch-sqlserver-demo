@@ -1,0 +1,25 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+      name: spring-batch-sqlserver-demo
+
+  # MSSQL server configuration
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=spring-batch-demo;trustServerCertificate=true
+    username: sa
+    password: P@ssw0rd123!
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServer2012Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  # Spring Batch config
+  batch:
+    job:
+      enabled: false
+    #jdbc:
+    #  initialize-schema: always
+
