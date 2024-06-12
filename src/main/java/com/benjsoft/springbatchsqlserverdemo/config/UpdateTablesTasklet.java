@@ -21,9 +21,6 @@ import java.util.List;
 @Slf4j
 public class UpdateTablesTasklet implements Tasklet {
 
-    @PersistenceContext
-    private EntityManager entityManager;
-
     @Autowired
     private Table1Repository table1Repository;
 

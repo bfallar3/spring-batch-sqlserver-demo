@@ -18,10 +18,10 @@ public class CronJob {
     @Autowired
     private Job updateTablesJob;
 
-    @Scheduled(cron = "*/10 * * * * *")
+    @Scheduled(cron = "0 */1 * * * *")
     public void cronJob1() throws JobInstanceAlreadyCompleteException, JobExecutionAlreadyRunningException, JobParametersInvalidException, JobRestartException {
         JobParameters jobParameters = new JobParametersBuilder()
-                .addString("jobId", String.valueOf(System.currentTimeMillis()))
+                .addString("startAt", String.valueOf(System.currentTimeMillis()))
                 .toJobParameters();
 
         jobLauncher.run(updateTablesJob, jobParameters);
